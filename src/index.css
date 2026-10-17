@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-navy-800 font-sans antialiased;
+}
+
+@keyframes lx-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lx-rise {
+  animation: lx-rise 0.7s ease both;
+}
+
+.lx-rise-2 {
+  animation: lx-rise 0.7s ease 0.12s both;
+}
+
+.lx-rise-3 {
+  animation: lx-rise 0.7s ease 0.24s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lx-rise,
+  .lx-rise-2,
+  .lx-rise-3 {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
